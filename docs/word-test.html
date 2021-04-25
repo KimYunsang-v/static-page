@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<ul id="view">
+</ul>
+
+</body>
+
+<script>
+    var words = [
+        {
+            english: "outcome",
+            korean: "결과, 성과"
+        },{
+            english: "outline",
+            korean: "개요, 윤곽, 외형"
+        },{
+            english: "outlook",
+            korean: "전망, 예측"
+        },{
+            english: "outstanding",
+            korean: "뛰어난, 아주 훌륭한"
+        },{
+            english: "outlet",
+            korean: "배출구, 살점"
+        },{
+            english: "outdo",
+            korean: "~보다 뛰어나다"
+        },{
+            english: "utter",
+            korean: "완전한, 말하다"
+        },{
+            english: "utmost",
+            korean: "최대의, 극도의"
+        },{
+            english: "overcome",
+            korean: "극복하다, 이겨내다"
+        },{
+            english: "overlook",
+            korean: "간과하다, 못보고 넘어가다"
+        },{
+            english: "overseas",
+            korean: "해외로, 해외의"
+        },{
+            english: "overhead",
+            korean: "머리위에"
+        },{
+            english: "overtake",
+            korean: "따라잡다, 추월하다"
+        },{
+            english: "overwhelm",
+            korean: "압도하다, 당황하게 하다"
+        },{
+            english: "overthrow",
+            korean: "전복시키다"
+        },{
+            english: "overwork",
+            korean: "과로하다"
+        },{
+            english: "extracurricular",
+            korean: "정규 교과 과정 이외의"
+        },{
+            english: "extraterrestrial",
+            korean: "외계의"
+        },{
+            english: "extraordinary",
+            korean: "이상한, 비범한"
+        },{
+            english: "extrovert",
+            korean: "외향적인 사람"
+        },{
+            english: "recover",
+            korean: "회복하다, 되찾다"
+        },{
+            english: "recycle",
+            korean: "재활용하다"
+        },{
+            english: "replace",
+            korean: "대신하다, 교체하다"
+        },{
+            english: "reproduce",
+            korean: "생식하다, 복제하다"
+        },{
+            english: "revive",
+            korean: "소생시키다, 회복시키다"
+        },{
+            english: "remain",
+            korean: "여전히 ~인 상태이다, 머무르다"
+        },{
+            english: "remove",
+            korean: "제거하다"
+        },{
+            english: "represent",
+            korean: "~을 대변하다"
+        },{
+            english: "international",
+            korean: "국제적인, 국가 간의"
+        },{
+            english: "interpret",
+            korean: "통역하다"
+        },{
+            english: "interfere",
+            korean: "간섭하다, 방해하다"
+        },{
+            english: "interaction",
+            korean: "상호 작용, 상호 영향"
+        },{
+            english: "dialog",
+            korean: "대화, 문답, 회화"
+        },{
+            english: "dialect",
+            korean: "방언, 사투리"
+        },{
+            english: "diameter",
+            korean: "지름, 직경"
+        },{
+            english: "transfer",
+            korean: "전근하다, 환승하다"
+        },{
+            english: "transform",
+            korean: "변형시키다"
+        },{
+            english: "translate",
+            korean: "번역하다, 해석하다"
+        },{
+            english: "transplant",
+            korean: "옮겨 심다, 이식하다"
+        }
+    ];
+
+    function shuffleArrayES6(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArrayES6(words)
+
+    for (let i = 0; i < words.length; i++) {
+        var view = $("#view");
+        view.append("<li>" + words[i].english + "</li>");
+    }
+
+</script>
+</html>
