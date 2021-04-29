@@ -4,133 +4,145 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
 </head>
 <body>
 
 <ul id="view">
 </ul>
 
+<button onclick="showAnswer()">정답 보기</button>
+
 </body>
 
 <script>
     var words = [
         {
-            english: "outcome",
-            korean: "결과, 성과"
+            english: "depress",
+            korean: "낙담시키다, 우울하게 하다"
         },{
-            english: "outline",
-            korean: "개요, 윤곽, 외형"
+            english: "despise",
+            korean: "경멸하다, 얕보다"
         },{
-            english: "outlook",
-            korean: "전망, 예측"
+            english: "depart",
+            korean: "떠나다, 출발하다"
         },{
-            english: "outstanding",
-            korean: "뛰어난, 아주 훌륭한"
+            english: "detect",
+            korean: "발견하다, 찾아내다"
         },{
-            english: "outlet",
-            korean: "배출구, 살점"
+            english: "descend",
+            korean: "내려가다, (어둠, 침묵 등이) 내려앉다"
         },{
-            english: "outdo",
-            korean: "~보다 뛰어나다"
+            english: "detach",
+            korean: "분리하다, 떼어내다"
         },{
-            english: "utter",
-            korean: "완전한, 말하다"
+            english: "declare",
+            korean: "선언[공언]하다"
         },{
-            english: "utmost",
-            korean: "최대의, 극도의"
+            english: "debate",
+            korean: "토론, 논쟁"
         },{
-            english: "overcome",
-            korean: "극복하다, 이겨내다"
+            english: "undergraduate",
+            korean: "대학생, 학부생"
         },{
-            english: "overlook",
-            korean: "간과하다, 못보고 넘어가다"
+            english: "undergo",
+            korean: "(변화 등을) 겪다, 경험하다"
         },{
-            english: "overseas",
-            korean: "해외로, 해외의"
+            english: "undertake",
+            korean: "(떠)맡다, ~의 책임을 지다"
         },{
-            english: "overhead",
-            korean: "머리위에"
+            english: "underlie",
+            korean: "~의 기저를 이루다, 기본이 되다"
         },{
-            english: "overtake",
-            korean: "따라잡다, 추월하다"
+            english: "exhale",
+            korean: "(숨을) 내쉬다, (공기, 가스 등을) 내뿜다"
         },{
-            english: "overwhelm",
-            korean: "압도하다, 당황하게 하다"
+            english: "expand",
+            korean: "커지다, 팽창하다"
         },{
-            english: "overthrow",
-            korean: "전복시키다"
+            english: "explicit",
+            korean: "뚜렷한, 명백한"
         },{
-            english: "overwork",
-            korean: "과로하다"
+            english: "expose",
+            korean: "노출시키다, 드러내다"
         },{
-            english: "extracurricular",
-            korean: "정규 교과 과정 이외의"
+            english: "exaggerate",
+            korean: "과장하다, 과장해서 말하다"
         },{
-            english: "extraterrestrial",
-            korean: "외계의"
+            english: "exchange",
+            korean: "교환, 주고받기, 환"
         },{
-            english: "extraordinary",
-            korean: "이상한, 비범한"
+            english: "exhaust",
+            korean: "지치게하다, 다 써 버리다"
         },{
-            english: "extrovert",
-            korean: "외향적인 사람"
+            english: "extinct",
+            korean: "멸종한, 사멸한"
         },{
-            english: "recover",
-            korean: "회복하다, 되찾다"
+            english: "exceed",
+            korean: "넘다, 초과하다"
         },{
-            english: "recycle",
-            korean: "재활용하다"
+            english: "ex-convict",
+            korean: "전과자"
         },{
-            english: "replace",
-            korean: "대신하다, 교체하다"
+            english: "uneasy",
+            korean: "불안한, 걱정스러운"
         },{
-            english: "reproduce",
-            korean: "생식하다, 복제하다"
+            english: "unfair",
+            korean: "불공평한, 부당한"
         },{
-            english: "revive",
-            korean: "소생시키다, 회복시키다"
+            english: "unfortunate",
+            korean: "불운한, 불행한"
         },{
-            english: "remain",
-            korean: "여전히 ~인 상태이다, 머무르다"
+            english: "unlikely",
+            korean: "~할 것 같지 않은, 가망 없는"
         },{
-            english: "remove",
-            korean: "제거하다"
+            english: "unusual",
+            korean: "보통이 아닌, 평소와 다른"
         },{
-            english: "represent",
-            korean: "~을 대변하다"
+            english: "unlock",
+            korean: "열다"
         },{
-            english: "international",
-            korean: "국제적인, 국가 간의"
+            english: "disagree",
+            korean: "~와 의견이 다르다"
         },{
-            english: "interpret",
-            korean: "통역하다"
+            english: "disappear",
+            korean: "(시야에서) 사라지다"
         },{
-            english: "interfere",
-            korean: "간섭하다, 방해하다"
+            english: "disorder",
+            korean: "무질서, 혼란"
         },{
-            english: "interaction",
-            korean: "상호 작용, 상호 영향"
+            english: "discourage",
+            korean: "그만두게 하다, 단념시키다"
         },{
-            english: "dialog",
-            korean: "대화, 문답, 회화"
+            english: "dismiss",
+            korean: "묵살하다, 해고하다"
         },{
-            english: "dialect",
-            korean: "방언, 사투리"
+            english: "dispose",
+            korean: "배치하다, 배열하다"
         },{
-            english: "diameter",
-            korean: "지름, 직경"
+            english: "display",
+            korean: "전시, 진열"
         },{
-            english: "transfer",
-            korean: "전근하다, 환승하다"
+            english: "differ",
+            korean: "~와 다르다"
         },{
-            english: "transform",
-            korean: "변형시키다"
+            english: "independent",
+            korean: "독립한, 자주의"
         },{
-            english: "translate",
-            korean: "번역하다, 해석하다"
+            english: "inevitable",
+            korean: "피할 수 없는, 불가피한"
         },{
-            english: "transplant",
-            korean: "옮겨 심다, 이식하다"
+            english: "inexpensive",
+            korean: "저렴한, 비싸지 않은"
+        },{
+            english: "illegal",
+            korean: "불법의"
+        },{
+            english: "immoral",
+            korean: "부도덕한"
+        },{
+            english: "irrelevant",
+            korean: "~와 관계가 없는, 상관없는"
         }
     ];
 
@@ -142,10 +154,20 @@
     }
 
     shuffleArrayES6(words)
+    var answer = []
 
     for (let i = 0; i < words.length; i++) {
         var view = $("#view");
         view.append("<li>" + words[i].english + "</li>");
+        answer.push(words[i])
+    }
+
+    function showAnswer() {
+        $("#view").empty()
+        for (let i = 0; i < answer.length; i++) {
+            var view = $("#view");
+            view.append("<li>" + answer[i].english + "&nbsp;&nbsp;&nbsp;&nbsp;" +  answer[i].korean + "</li>");
+        }
     }
 
 </script>
